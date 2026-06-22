@@ -1,0 +1,13 @@
+services:
+  redis:
+    image: redis:7.2-alpine
+    container_name: forex_bot_redis
+    command: redis-server --requirepass secure_redis_password_2026
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: always
+
+volumes:
+  redis_data:
